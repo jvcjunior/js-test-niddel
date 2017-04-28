@@ -1,14 +1,14 @@
+// Dependencies
 import React from 'react';
 import PropTypes from 'prop-types';
 import MovieListItem from '../movies-list-item/MovieListItem.jsx';
 
-const MoviesList = (props) => {
-  const videoItems = props.movies.map((movie) => {
-    return (
-      <MovieListItem movie={movie} />
+// Styles
+import './MoviesList.scss';
 
-    );
-  });
+const MoviesList = (props) => {
+  const videoItems = props.movies.map(movie => <MovieListItem movie={movie} key={movie.imdbID} />);
+
   return (
     <table className="table-fill">
       <thead>

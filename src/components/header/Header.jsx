@@ -1,15 +1,17 @@
 // Dependencies
 import React from 'react';
+import Input from '../commom/input/Input.jsx';
 
 // Styles
 import './Header.scss';
 
-function Header() {
-  return (
+const Header = () => {
+  const header = (
     <header>
-      <h1>Simple React Page</h1>
+      <Input inputName="Search" />
     </header>
   );
-}
+  return header;
+};
 
 export default Header;
