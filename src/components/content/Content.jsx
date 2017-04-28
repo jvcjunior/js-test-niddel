@@ -1,34 +1,17 @@
 // Dependencies
-import React, { Component } from 'react';
+import React from 'react';
 import MoviesList from '../movies-list/MoviesList.jsx';
 
 // Styles
 import './Content.scss';
 
-class Content extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      movies: [],
-    };
-
-    this.videoSearch('star+wars');
-  }
-
-  videoSearch(term) {
-    fetch(`http://www.omdbapi.com/?s=${term}&page=1`)
-      .then(response => response.json())
-      .then(movies => this.setState({ movies: movies.Search }));
-  }
-
-  render() {
-    return (
-      <div>
-        <MoviesList movies={this.state.movies} />
-      </div>
-    );
-  }
-}
+const Content = (props) => {
+  const list = (
+    <div>
+      <MoviesList movies={props.movies} />
+    </div>
+  );
+  return list;
+};
 
 export default Content;

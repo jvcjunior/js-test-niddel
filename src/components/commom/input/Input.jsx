@@ -29,6 +29,7 @@ class Input extends Component {
     if (event.target.value.trim() === '') {
       this.setState({ customClassName: 'input--filled' });
     }
+    this.props.onSearchTermChange(event.target.value);
   }
 
   onFocus() {
@@ -57,6 +58,7 @@ class Input extends Component {
 
 Input.propTypes = {
   inputName: PropTypes.string.isRequired,
+  onSearchTermChange: PropTypes.func.isRequired,
 };
 
 export default Input;
